@@ -8,7 +8,7 @@ USER        roboshop
 COPY        src/ /app/src/
 COPY        pom.xml /app/pom.xml
 RUN         mvn clean package
-RUN         curl -L -O https://download.newrelic.com/newrelic/java-agent/newrelic-agent/current/newrelic-java.zip && unzip newrelic-java.zip && rm -f newrelic-java.zip
+RUN         curl -L -O https://download.newrelic.com/newrelic/java-agent/newrelic-agent/current/newrelic-java.zip
 COPY        newrelic.yml newrelic/newrelic.yml
 COPY        run.sh /app
 ENTRYPOINT  ["bash", "/app/run.sh"]
