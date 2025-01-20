@@ -10,7 +10,7 @@ jobs:
     uses: raghudevopsb81/github-reusable-actions/.github/workflows/ci-main.yaml@main
     with:
       componentName: shipping
-      SONAR_CLASS_PATH: " "
+      SONAR_CLASS_PATH: "-Dsonar.java.binaries=target"
     secrets:
       NR_API_KEY: ${{ secrets.NR_API_KEY }}
       VAULT_TOKEN: ${{ secrets.VAULT_TOKEN }}
